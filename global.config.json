@@ -1,4 +1,10 @@
 {
     "NETWORK":"mainnet",
-    "CARDANO_GAS":"lovelace"
+    "CARDANO_GAS":"lovelace",
+    "APIS" : [
+        "mainnetO3J3QZEtxa6WjKxup7Oy2cMPOU7wGMmK",
+        "mainnetLjfwpBx0MEU0REQJ9X8CjMuXnKXepopz",
+        "mainnetKMdJ9Eg5QMOVv6vfXJfdg959a02EIYH0"
+    ]
+
 }

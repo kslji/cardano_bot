@@ -2,12 +2,6 @@ import { BlockFrostAPI } from '@blockfrost/blockfrost-js';
 import { BlockfrostAdapter, NetworkId, Asset } from "@minswap/sdk";
 import globalConfig from './global.config.json' assert { type: 'json' };
 
-const apis = [
-    "mainnetO3J3QZEtxa6WjKxup7Oy2cMPOU7wGMmK",
-    "mainnetLjfwpBx0MEU0REQJ9X8CjMuXnKXepopz",
-    "mainnetKMdJ9Eg5QMOVv6vfXJfdg959a02EIYH0"
-]
-
 function decodeTokenSymbol(encodeString) {
     try {
         return Buffer.from(encodeString, 'hex').toString('utf-8');
@@ -21,7 +15,7 @@ async function getTokenFullName(token) {
         let iterPools = 0
         while (true) {
             const blockFrostApi = new BlockFrostAPI({
-                projectId: apis[iterPools % apis.length],
+                projectId: globalConfig.APIS[iterPools % globalConfig.APIS.length],
                 network: globalConfig.NETWORK,
             });
 
@@ -55,7 +49,7 @@ async function getTokenFullName(token) {
 async function getTokenPrice(token) {
     try {
         const blockFrostApi = new BlockFrostAPI({
-            projectId: apis[Math.floor(Math.random() * apis.length)],
+            projectId: globalConfig.APIS[Math.floor(Math.random() * globalConfig.APIS.length)],
             network: globalConfig.NETWORK,
         });
 
@@ -71,7 +65,7 @@ async function getTokenPrice(token) {
         if (minAdaPool) {
             const [priceInAda, priceInUsd] = await adapter.getV2PoolPrice({ pool: minAdaPool });
             console.log({
-                token: tokendetails.symbol,
+                SYMBOL: tokendetails.symbol,
                 USD: priceInUsd.toString(),
                 ADA: priceInAda.toString(),
             })
