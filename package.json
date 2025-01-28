@@ -1,0 +1,21 @@
+{
+  "name": "cardano_bot",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@blockfrost/blockfrost-js": "^5.7.0",
+    "@emurgo/cardano-serialization-lib-nodejs": "^13.2.1",
+    "@minswap/sdk": "^0.3.4",
+    "@prisma/client": "^6.2.1",
+    "axios": "^1.7.9",
+    "dotenv": "^16.4.7",
+    "lucid-cardano": "^0.10.11"
+  },
+  "type": "module"
+}
